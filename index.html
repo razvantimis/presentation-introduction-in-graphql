@@ -9,6 +9,7 @@
 
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="assets/style.css">
 	<link rel="stylesheet" href="dist/theme/black.css">
 
 	<!-- Theme used for syntax highlighted code -->
@@ -18,26 +19,84 @@
 <body>
 	<div class="reveal">
 		<div class="slides">
-			<section >
+			<section>
 
 				<img width="350px" src="assets/img/graphql-logo.png" />
 
-				<p style="text-align: center" class="title-font">
+				<h2 class="slide-title" style="font-size: 3rem">
 					Introduction to <strong>GraphQL</strong>
-				</p>
+				</h2>
 
-				<p style="font-size: 70%; opacity: 0.5" class="normal-font">
+				<p style="font-size: 70%; opacity: 0.5">
 					by Razvan Timis
 				</p>
 			</section>
-			<section>Slide 2
-				<aside class="notes">
-					<p>Some notes</p>
-				</aside>
-				<p>Some slide text</p>
-				<aside class="notes">
-					<p>and some more notes</p>
-				</aside>
+			<section>
+				<h2 class="slide-title">About the presentation</h2>
+				<ul>
+					<li>What is GraphQL?</li>
+					<li>Who’s using GraphQL</li>
+					<li>REST Vs GraphQL</li>
+					<li>How GraphQL works?</li>
+				</ul>
+
+			</section>
+			<section>
+				<h2 class="slide-title">What is GraphQL</h2>
+				<ul>
+					<li class="fragment fade-in">Developed by Facebook in 2012</li>
+					<li class="fragment fade-in">Open source version published in July 2015</li>
+					<li class="fragment fade-in">A query language for your API</li>
+					<li class="fragment fade-in">GraphQL is a PATTERN not a technology</li>
+				</ul>
+			</section>
+			<section data-background-color="white">
+				<h2 class="slide-title">Who’s using GraphQL</h2>
+				<div class="company-logo-list">
+					<a target="_blank"
+						href="https://medium.com/airbnb-engineering/how-airbnb-is-moving-10x-faster-at-scale-with-graphql-and-apollo-aa4ec92d69e2">
+						<img src="assets/logos/airbnb-adopter.svg" alt="Airbnb" />
+					</a>
+					<a target="_blank" href="https://developer.atlassian.com/platform/atlassian-graphql-api/graphql/">
+						<img src="assets/logos/atlassian-adopter.svg" alt="Atlassian" />
+					</a>
+					<a target="_blank" href="https://medium.com/paypal-tech/graphql-at-paypal-an-adoption-story-b7e01175f2b7">
+						<img src="assets/logos/pay-pal-adopter.svg" alt="PayPal" />
+					</a>
+					<a target="_blank" href="https://medium.com/paypal-tech/graphql-at-paypal-an-adoption-story-b7e01175f2b7">
+						<img src="assets/logos/shopify-adopter.svg" alt="Shopify" />
+					</a>
+					<a target="_blank" href="https://www.youtube.com/watch?v=gpd6JtnWs2E">
+						<img src="assets/logos/the-new-york-times-adopter.svg" alt="The New York times" />
+					</a>
+					<a target="_blank"
+						href="https://blog.twitter.com/engineering/en_us/topics/infrastructure/2020/rebuild_twitter_public_api_2020">
+						<img src="assets/logos/twitter.svg" alt="Twitter" />
+					</a>
+				</div>
+				<p>For more... <a target="_blank" href="https://graphql.org/users/"><strong>click here</strong></a></p>
+			</section>
+			<section>
+				<h2 class="slide-title">REST Vs GraphQL</h2>
+				<ul>
+					<li class="fragment fade-in">No more over fetching extra data.</li>
+					<li class="fragment fade-in">No more under fetching data.</li>
+					<li class="fragment fade-in">Rapid product iterations on the front end.</li>
+					<li class="fragment fade-in">Less endpoints.</li>
+				</ul>
+			</section>
+			<section>
+				<h2 class="slide-title">References</h2>
+				<ul>
+					<li>
+						<a target="_blank" href="https://shopify.engineering/understanding-graphql-beginner-part-one">
+							Shopify: Understanding GraphQL for Beginners
+						</a>
+					</li>
+					<li>No more under fetching data.</li>
+					<li>Rapid product iterations on the front end.</li>
+					<li>Less endpoints.</li>
+				</ul>
 			</section>
 		</div>
 	</div>
@@ -52,6 +111,7 @@
 		// - https://revealjs.com/config/
 		Reveal.initialize({
 			hash: true,
+			center: false,
 
 			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]

@@ -1,0 +1,15 @@
+.reveal h2.slide-title {
+  text-transform: none;
+}
+
+.company-logo-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.company-logo-list img {
+  width: 250px;
+}
