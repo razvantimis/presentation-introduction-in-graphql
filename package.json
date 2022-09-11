@@ -1,8 +1,8 @@
 {
   "name": "@timisdev/graphql-presentation",
   "version": "1.0.0",
-  "description": "Graphql introducation",
-  "homepage": "https://timis.dev",
+  "description": "Graphql introduction",
+  "homepage": "https://razvantimis.github.io/presentation-introduction-to-graphql/",
   "license": "MIT",
   "scripts": {
     "test": "gulp test",
@@ -11,12 +11,12 @@
   },
   "author": {
     "name": "Razvan Timis",
-    "email": "r@timis.deb",
+    "email": "r@timis.dev",
     "web": "https://timis.dev"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:razvantimis/presentation-introduction-in-graphql.git"
+    "url": "git@github.com:razvantimis/presentation-introduction-to-graphql.git"
   },
   "engines": {
     "node": ">=10.0.0"
