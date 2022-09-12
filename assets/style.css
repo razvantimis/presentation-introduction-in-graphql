@@ -11,10 +11,11 @@
 }
 
 .company-logo-list img {
-  width: 250px;
+  width: 220px;
 }
 
 .slide-center {
+  flex-direction: column;
   height: 70%;
   display: flex;
   justify-content: center;
