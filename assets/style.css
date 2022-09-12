@@ -13,3 +13,10 @@
 .company-logo-list img {
   width: 250px;
 }
+
+.slide-center {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

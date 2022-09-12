@@ -1,122 +1,269 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Introducation to GraphQL</title>
 
-	<title>Introducation to GraphQL</title>
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" />
 
-	<link rel="stylesheet" href="dist/reset.css">
-	<link rel="stylesheet" href="dist/reveal.css">
-	<link rel="stylesheet" href="assets/style.css">
-	<link rel="stylesheet" href="dist/theme/white.css">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
 
-	<!-- Theme used for syntax highlighted code -->
-	<link rel="stylesheet" href="plugin/highlight/monokai.css">
-</head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <img width="350px" src="assets/img/graphql-logo.png" />
 
-<body>
-	<div class="reveal">
-		<div class="slides">
-			<section>
+          <h2 class="slide-title" style="font-size: 3rem">
+            Introduction to <strong>GraphQL</strong>
+          </h2>
 
-				<img width="350px" src="assets/img/graphql-logo.png" />
+          <p style="font-size: 70%; opacity: 0.5">by Razvan Timis</p>
+        </section>
+        <section>
+          <h2 class="slide-title">About the presentation</h2>
+          <ul style="width: 90%">
+            <li>What is GraphQL?</li>
+            <li>Who’s using GraphQL?</li>
+            <li>REST Vs GraphQL</li>
+            <li>How graphql works?</li>
+          </ul>
+        </section>
+        <section>
+          <h2 class="slide-title">What is GraphQL</h2>
+          <ul>
+            <li class="fragment fade-in">Developed by Facebook in 2012</li>
+            <li class="fragment fade-in">
+              Open source version published in July 2015
+            </li>
+            <li class="fragment fade-in">A query language for your API</li>
+            <li class="fragment fade-in">
+              GraphQL is a PATTERN not a technology
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2 class="slide-title">What is GraphQL</h2>
+          <img src="/assets/img/graphql-diagram.jpeg" alt="GraphQL Diagram" />
+        </section>
+        <section>
+          <h2 class="slide-title">What is GraphQL</h2>
+          <img
+            src="/assets/img/type-system.png"
+            style="height: 55vh"
+            alt="Type system graphql"
+          />
+        </section>
+        <section>
+          <h2 class="slide-title">What is GraphQL</h2>
+          <p>
+            We have two types of operations: <strong>queries</strong> and
+            <strong>mutations</strong>.
+          </p>
+          <img
+            src="/assets/img/operation-graphql.png"
+            alt="Operation graphql"
+          />
+        </section>
+        <section>
+          <h2 class="slide-title">What is GraphQL</h2>
+          <img
+            src="/assets/img/graphql-playground.gif"
+            style="height: 60vh"
+            alt="Graphql playground"
+          />
+        </section>
+        <section>
+          <h2 class="slide-title">Who’s using GraphQL</h2>
+          <div class="company-logo-list">
+            <a
+              target="_blank"
+              href="https://medium.com/airbnb-engineering/how-airbnb-is-moving-10x-faster-at-scale-with-graphql-and-apollo-aa4ec92d69e2"
+            >
+              <img src="assets/logos/airbnb-adopter.svg" alt="Airbnb" />
+            </a>
+            <a
+              target="_blank"
+              href="https://developer.atlassian.com/platform/atlassian-graphql-api/graphql/"
+            >
+              <img src="assets/logos/atlassian-adopter.svg" alt="Atlassian" />
+            </a>
+            <a
+              target="_blank"
+              href="https://medium.com/paypal-tech/graphql-at-paypal-an-adoption-story-b7e01175f2b7"
+            >
+              <img src="assets/logos/pay-pal-adopter.svg" alt="PayPal" />
+            </a>
+            <a
+              target="_blank"
+              href="https://medium.com/paypal-tech/graphql-at-paypal-an-adoption-story-b7e01175f2b7"
+            >
+              <img src="assets/logos/shopify-adopter.svg" alt="Shopify" />
+            </a>
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=gpd6JtnWs2E"
+            >
+              <img
+                src="assets/logos/the-new-york-times-adopter.svg"
+                alt="The New York times"
+              />
+            </a>
+            <a
+              target="_blank"
+              href="https://blog.twitter.com/engineering/en_us/topics/infrastructure/2020/rebuild_twitter_public_api_2020"
+            >
+              <img src="assets/logos/twitter.svg" alt="Twitter" />
+            </a>
+          </div>
+          <p>
+            For more...
+            <a target="_blank" href="https://graphql.org/users/"
+              ><strong>click here</strong></a
+            >
+          </p>
+        </section>
+        <section>
+          <h2 class="slide-title">REST Vs GraphQL</h2>
+          <ul>
+            <li class="fragment fade-in">No more over fetching extra data.</li>
+            <img
+              class="fragment fade-in"
+              src="/assets/img/overfetching.png"
+              alt="Over fetching"
+            />
+          </ul>
+        </section>
 
-				<h2 class="slide-title" style="font-size: 3rem">
-					Introduction to <strong>GraphQL</strong>
-				</h2>
+        <section>
+          <h2 class="slide-title">REST Vs GraphQL</h2>
+          <ul>
+            <li class="fragment fade-in">No more under fetching data.</li>
+            <img
+              class="fragment fade-in"
+              src="/assets/img/overfetching.png"
+              alt="Over fetching"
+            />
+          </ul>
+        </section>
 
-				<p style="font-size: 70%; opacity: 0.5">
-					by Razvan Timis
-				</p>
-			</section>
-			<section>
-				<h2 class="slide-title">About the presentation</h2>
-				<ul>
-					<li>What is GraphQL?</li>
-					<li>Who’s using GraphQL</li>
-					<li>REST Vs GraphQL</li>
-					<li>How GraphQL works?</li>
-				</ul>
+        <section>
+          <h2 class="slide-title">REST Vs GraphQL</h2>
+          <ul>
+            <li class="fragment fade-in">API Version</li>
+          </ul>
 
-			</section>
-			<section>
-				<h2 class="slide-title">What is GraphQL</h2>
-				<ul>
-					<li class="fragment fade-in">Developed by Facebook in 2012</li>
-					<li class="fragment fade-in">Open source version published in July 2015</li>
-					<li class="fragment fade-in">A query language for your API</li>
-					<li class="fragment fade-in">GraphQL is a PATTERN not a technology</li>
-				</ul>
-			</section>
-			<section>
-				<h2 class="slide-title">Who’s using GraphQL</h2>
-				<div class="company-logo-list">
-					<a target="_blank"
-						href="https://medium.com/airbnb-engineering/how-airbnb-is-moving-10x-faster-at-scale-with-graphql-and-apollo-aa4ec92d69e2">
-						<img src="assets/logos/airbnb-adopter.svg" alt="Airbnb" />
-					</a>
-					<a target="_blank" href="https://developer.atlassian.com/platform/atlassian-graphql-api/graphql/">
-						<img src="assets/logos/atlassian-adopter.svg" alt="Atlassian" />
-					</a>
-					<a target="_blank" href="https://medium.com/paypal-tech/graphql-at-paypal-an-adoption-story-b7e01175f2b7">
-						<img src="assets/logos/pay-pal-adopter.svg" alt="PayPal" />
-					</a>
-					<a target="_blank" href="https://medium.com/paypal-tech/graphql-at-paypal-an-adoption-story-b7e01175f2b7">
-						<img src="assets/logos/shopify-adopter.svg" alt="Shopify" />
-					</a>
-					<a target="_blank" href="https://www.youtube.com/watch?v=gpd6JtnWs2E">
-						<img src="assets/logos/the-new-york-times-adopter.svg" alt="The New York times" />
-					</a>
-					<a target="_blank"
-						href="https://blog.twitter.com/engineering/en_us/topics/infrastructure/2020/rebuild_twitter_public_api_2020">
-						<img src="assets/logos/twitter.svg" alt="Twitter" />
-					</a>
-				</div>
-				<p>For more... <a target="_blank" href="https://graphql.org/users/"><strong>click here</strong></a></p>
-			</section>
-			<section>
-				<h2 class="slide-title">REST Vs GraphQL</h2>
-				<ul>
-					<li class="fragment fade-in">No more over fetching extra data.</li>
-					<li class="fragment fade-in">No more under fetching data.</li>
-					<li class="fragment fade-in">Rapid product iterations on the front end.</li>
-					<li class="fragment fade-in">Less endpoints.</li>
-				</ul>
-			</section>
-			<section>
-				<h2 class="slide-title">References</h2>
-				<ul>
-					<li>
-						<a target="_blank" href="https://shopify.engineering/understanding-graphql-beginner-part-one">
-							Shopify: Understanding GraphQL for Beginners
-						</a>
-					</li>
-					<li>No more under fetching data.</li>
-					<li>Rapid product iterations on the front end.</li>
-					<li>Less endpoints.</li>
-				</ul>
-			</section>
-		</div>
-	</div>
+          <pre class="fragment fade-in">
+						<code data-trim data-noescape>
+							type Account {
+								id: Int
+								name: String!
+								surname: String! @deprecated(reason: "Use `personSurname`")
+								personSurname: String
+							}
+						</code>
+					</pre>
+        </section>
 
-	<script src="dist/reveal.js"></script>
-	<script src="plugin/notes/notes.js"></script>
-	<script src="plugin/markdown/markdown.js"></script>
-	<script src="plugin/highlight/highlight.js"></script>
-	<script>
-		// More info about initialization & config:
-		// - https://revealjs.com/initialization/
-		// - https://revealjs.com/config/
-		Reveal.initialize({
-			hash: true,
-			center: false,
+        <section>
+          <h2 class="slide-title">REST Vs GraphQL</h2>
+          <ul>
+            <li class="fragment fade-in">Less endpoints.</li>
+            <img
+              class="fragment fade-in"
+              src="/assets/img/graphql-request.jpeg"
+              style="height: 55vh"
+              alt="Graphql request"
+            />
+          </ul>
+        </section>
 
-			// Learn about plugins: https://revealjs.com/plugins/
-			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
-		});
-	</script>
-</body>
+        <section>
+          <h2 class="slide-title">How graphql works</h2>
+          <h3>Demo</h3>
+        </section>
+        <section style="height: 100%;">
+          <div class="slide-center">
+            <h2>Thank you!</h2>
+          </div>
+        </section>
+        <section>
+          <h2 class="slide-title">References</h2>
+          <ul>
+            <li>
+              <a
+                target="_blank"
+                href="https://shopify.engineering/understanding-graphql-beginner-part-one"
+              >
+                Shopify: Understanding GraphQL for Beginners
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://dev.to/mshossain110/3-major-rest-api-problem-can-solve-using-graphql-1dg2"
+              >
+                3 major REST API problem can solve using GraphQL
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://medium.com/@AshKamdar/16-can-graphql-solve-rest-apis-underfetching-problem-529bc2d419c5"
+              >
+                Can GraphQL solve REST API’s underfetching problem?
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://blog.logrocket.com/versioning-fields-graphql/"
+              >
+                Versioning fields in GraphQL
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://jaygurav.netlify.app/graphql/graphqlTypesSystem/"
+                >GraphQL Types system</a
+              >
+            </li>
+            <li>
+              <a target="_blank" href="https://www.howtographql.com/"
+                >The Fullstack Tutorial for GraphQL</a
+              >
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
 
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        center: false,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
 </html>
