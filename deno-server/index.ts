@@ -20,18 +20,15 @@ const types = gql`
 type Book {
   title: String
 }
-
 type Author {
   name: String
   books: [Book]
 }
-
 type Query {
   # With a REST-based API, books and authors would probably be returned by different endpoints
   books: [Book]
   authors: [Author]
 }
-
 type Mutation {
   addBook(title: String, author: String): Book
 }
@@ -76,16 +73,16 @@ const resolvers = {
     }
   },
   Mutation: {
-    addBook: (parent: any, { input: { title, author } }: any, context: any, info: any) => {
+    addBook: (parent: any, { title, author } : any, context: any, info: any) => {
       console.log("input:", title, author);
       const authorExist = authors.find(authorItem => authorItem.name === author)
       books.push({
-        id: books.length + 1, title,
+        id: books.length + 1, 
+        title,
         authorId: authorExist?.id ?? 1
       })
       return {
         title,
-        author: authorExist ?? authors[0],
       };
     },
   },
