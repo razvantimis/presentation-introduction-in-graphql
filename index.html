@@ -33,61 +33,156 @@
         <ul style="width: 90%">
           <li>What is REST?</li>
           <li>What is GraphQL?</li>
+          <li>A blogging app: REST Vs GraphQL</li>
           <li>Who’s using GraphQL?</li>
-          <li>REST Vs GraphQL</li>
-          <li>How does it work?</li>
+          <li>Coding on blogging app</li>
         </ul>
       </section>
       <section>
-        <h2 class="slide-title">What is REST?</h2>
+        <h2 class="slide-title">What is REST</h2>
         <ul>
           <li class="fragment fade-in">
-            REST is an acronym for <b>RE</b>presentational <b>S</b>tate <b>T</b>ransfer
+            <b>RE</b>presentational <b>S</b>tate <b>T</b>ransfer is a software architectural style
           </li>
           <li class="fragment fade-in">A REST API consists of an assembly of interlinked resources</li>
           <li class="fragment fade-in">The clients and servers exchange information by using a standardized interface
-            and protocol.</li>
+            and http protocol.</li>
           <li class="fragment fade-in">
             Every interaction with the server must be stateless
           </li>
         </ul>
       </section>
+
       <section>
         <h2 class="slide-title">What is GraphQL</h2>
         <ul>
           <li class="fragment fade-in">
-            GraphQL is a PATTERN not a technology
+            A query language and server-side runtime for your API
           </li>
-          <li class="fragment fade-in">A query language for your API</li>
+          <li class="fragment fade-in">GraphQL is designed to make APIs fast, flexible, and developer-friendly</li>
           <li class="fragment fade-in">Developed by Facebook in 2012</li>
-          <li class="fragment fade-in">
-            Open source version published in July 2015
-          </li>
+
         </ul>
       </section>
       <section>
-        <h2 class="slide-title">What is GraphQL</h2>
-        <img src="assets/img/graphql-diagram.jpeg" alt="GraphQL Diagram" />
-      </section>
-      <section>
-        <h2 class="slide-title">What is GraphQL</h2>
-        <img src="assets/img/schema-graphql.png" alt="Type system graphql" />
+        <h2 class="slide-title">A blogging app: REST vs GraphQL</h2>
+        <section>
+          <ul>
+            <li>
+              A blogging application that need to display for a specific user:
+              <ul>
+                <li class="fragment fade-in">full name of the user</li>
+                <li class="fragment fade-in">the titles of the posts of that user</li>
+                <li class="fragment fade-in">the names of the last 3 followers of that user</li>
+              </ul>
+            </li>
+            <li class="fragment fade-in">Let see the differente between REST and GraphQL </li>
 
-        <a target="_blank"
-          href="https://netflixtechblog.com/how-netflix-scales-its-api-with-graphql-federation-part-1-ae3557c187e2">Schema
-          & Resolvers for Studio API by Netflix</a>
+          </ul>
+        </section>
+        <section>
+          <img style="height: 500px" src="assets/img/blog-app.png" alt="Blog App" />
+        </section>
       </section>
       <section>
-        <h2 class="slide-title">What is GraphQL</h2>
-        <p>
-          We have two types of operations: <strong>queries</strong> and
-          <strong>mutations / subscriptions</strong>.
+        <h2 class="slide-title">A blogging app: <span style="color: red;">REST</span> vs GraphQL</h2>
+        <img src="assets/img/rest-api.png" alt="REST Api Diagram" />
+        <p>For each endpoint, the client app will do a REST request</p>
+      </section>
+      <section>
+        <h2 class="slide-title">A blogging app: REST vs <span style="color: red;">GraphQL</span></h2>
+        <img src="assets/img/graphql-request.png" alt="Graphql Request" />
+      </section>
+      <section>
+        <h2 class="slide-title">A blogging app: REST vs <span style="color: red;">GraphQL</span></h2>
+        <p>Let see how the GraphQL schema look</p>
+        <pre class="fragment fade-in">
+          <code data-trim data-noescape>
+            type Query {
+              User(id: String): User
+            }
+            type User {
+              name: String
+              age: Int
+              posts: [Post]
+              followers(last: Int):[Follower]
+            }
+            type Post {
+              title: String
+              content: String
+            }
+            type Follower {
+              name: String
+              age: Int
+            }
+           
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h2 class="slide-title">REST Vs GraphQL</h2>
+        <ul>
+          <li>No more over fetching extra data.</li>
+          <img src="assets/img/graphql-request.png" alt="Graphql Request" />
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="slide-title">REST Vs GraphQL</h2>
+        <ul>
+          <li>No more under fetching data.</li>
+          <img src="assets/img/graphql-request.png" alt="Graphql Request" />
+
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="slide-title">REST Vs GraphQL</h2>
+        <ul>
+          <li>API changes and evolution</li>
+        </ul>
+        <pre class="fragment fade-in">
+						<code data-trim data-noescape>
+              type User {
+                name: String @deprecated(reason: "Use `fullName`")
+                fullName: String
+                age: Int
+                posts: [Post]
+                followers(last: Int):[Follower]
+              }
+						</code>
+					</pre>
+        <p class="fragment fade-in">
+          A directive can be attached to a field or fragment inclusion, and can affect execution of the query in any way
+          the server desires. <a target="_blank" href="https://graphql.org/learn/queries/#directives">more...</a>
         </p>
-        <img src="assets/img/operation-graphql.png" alt="Operation graphql" />
+      </section>
+
+      <section>
+        <h2 class="slide-title">REST Vs GraphQL</h2>
+        <ul>
+          <li>Single endpoint</li>
+          <img class="fragment fade-in" src="assets/img/graphql-single-endpoint.jpeg" style="height: 55vh"
+            alt="Graphql single endpoint" />
+        </ul>
       </section>
       <section>
-        <h2 class="slide-title">What is GraphQL</h2>
-        <img src="assets/img/graphql-playground.gif" style="height: 60vh" alt="Graphql playground" />
+        <h2 class="slide-title">REST Vs GraphQL</h2>
+        <ul>
+          <li>Insightful Analytics: low-level performance monitoring and monitoring the use of each field
+          </li>
+          <img class="fragment fade-in" src="assets/img/graphql-analytics.svg" style="height: 60vh"
+            alt="Graphql Analytics" />
+        </ul>
+      </section>
+      <section>
+        <h2 class="slide-title">REST Vs GraphQL</h2>
+        <ul>
+          <li>Auto documentation</li>
+          <img class="fragment fade-in" src="assets/img/graphql-doc.png" style="height: 60vh"
+            alt="Graphql documentation" />
+        </ul>
       </section>
       <section>
         <h2 class="slide-title">Who’s using GraphQL</h2>
@@ -125,53 +220,6 @@
           <a target="_blank" href="https://graphql.org/users/"><strong>click here</strong></a>
         </p>
       </section>
-      <section>
-        <h2 class="slide-title">REST Vs GraphQL</h2>
-        <ul>
-          <li class="fragment fade-in">No more over fetching extra data.</li>
-          <img class="fragment fade-in" src="assets/img/overfetching.png" alt="Over fetching" />
-        </ul>
-      </section>
-
-      <section>
-        <h2 class="slide-title">REST Vs GraphQL</h2>
-        <ul>
-          <li class="fragment fade-in">No more under fetching data.</li>
-          <img class="fragment fade-in" src="assets/img/overfetching.png" alt="Over fetching" />
-        </ul>
-      </section>
-
-      <section>
-        <h2 class="slide-title">REST Vs GraphQL</h2>
-        <ul>
-          <li class="fragment fade-in">API changes and evolution</li>
-        </ul>
-
-        <pre class="fragment fade-in">
-						<code data-trim data-noescape>
-							type Account {
-								id: Int
-								name: String!
-								surname: String! @deprecated(reason: "Use `personSurname`")
-								personSurname: String
-							}
-						</code>
-					</pre>
-        <p class="fragment fade-in">
-          A directive can be attached to a field or fragment inclusion, and can affect execution of the query in any way
-          the server desires. <a target="_blank" href="https://graphql.org/learn/queries/#directives">more...</a>
-        </p>
-      </section>
-
-      <section>
-        <h2 class="slide-title">REST Vs GraphQL</h2>
-        <ul>
-          <li class="fragment fade-in">Single endpoint</li>
-          <img class="fragment fade-in" src="assets/img/graphql-request.jpeg" style="height: 55vh"
-            alt="Graphql request" />
-        </ul>
-      </section>
-
       <section style="height: 100%;">
         <h2 class="slide-title">How does it work?</h2>
         <div class="slide-center">

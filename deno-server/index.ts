@@ -17,79 +17,94 @@ app.use(async (ctx, next) => {
 });
 
 const types = gql`
-type Book {
-  title: String
-}
-type Author {
+type User {
+
+  """  
+  The user personal nasme
+  """
   name: String
-  books: [Book]
+  age: Int
+  posts: [Post]
+  """
+   Get last user followers
+  """
+  followers(last: Int):[Follower]
+}
+type Post {
+  title: String
+  content: String
+}
+type Follower {
+  name: String
+  age: Int
 }
 type Query {
-  # With a REST-based API, books and authors would probably be returned by different endpoints
-  books: [Book]
-  authors: [Author]
+  """
+  Fetch the user data, you can get the posts and followers of a specific user
+  """
+  User(id: String): User
 }
 type Mutation {
-  addBook(title: String, author: String): Book
+  addUser(name: String, age: Int): User
 }
 `;
-
-const books = [
+const mockUsers = [
   {
-    id: 1,
-    title: 'Things Fall Apart',
-    authorId: 1
+    id: "1",
+    name: 'Chinua Achebe',
+    age: 34,
   },
   {
-    id: 2,
+    id: "2",
+    name: 'Stephen King',
+    age: 67,
+
+  }
+]
+const mockPosts = [
+  {
+    id: "1",
+    title: 'Post title 1',
+    content: `This is the content part post 1`,
+    userId: "1",
+  },
+  {
+    id: "2",
     title: 'The Outsider',
-    authorId: 2
+    content: `This is the content part post 1`,
+    userId: "2",
+
   },
   {
-    id: 3,
+    id: "3",
     title: 'IT',
-    authorId: 2
+    content: `This is the content part post 1`,
+    userId: "2",
+
   }
 ]
 
-const authors = [
-  {
-    id: 1,
-    name: 'Chinua Achebe'
-  },
-  {
-    id: 2,
-    name: 'Stephen King'
-  }
-]
+
 
 const resolvers = {
   Query: {
-    books: (parent: any, args: any, context: any, info: any) => {
-      return books
+    User: (parent: any, { id }: { id: string }, context: any, info: any) => {
+      const user = mockUsers.find(user => user.id === id);
+      return user
     },
-    authors: (parent: any, args: any, context: any, info: any) => {
-      return authors;
-    }
   },
   Mutation: {
-    addBook: (parent: any, { title, author } : any, context: any, info: any) => {
-      console.log("input:", title, author);
-      const authorExist = authors.find(authorItem => authorItem.name === author)
-      books.push({
-        id: books.length + 1, 
-        title,
-        authorId: authorExist?.id ?? 1
-      })
-      return {
-        title,
-      };
+    addUser: (parent: any, { name, age }: any, context: any, info: any) => {
+      // to implement
     },
   },
-  Author: {
-    books: (author) => {
-      return books.filter((book) => book.authorId === author.id);
+  User: {
+    followers: (user, { last }: { last: number }) => {
+      return mockUsers.slice(0, last)
     },
+    posts: (user) => {
+      return mockPosts.filter(post => post.userId === user.id);
+    }
   },
 };
 
