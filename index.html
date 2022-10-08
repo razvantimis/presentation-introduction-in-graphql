@@ -99,69 +99,6 @@
           </pre>
         </section>
       </section>
-
-      <section>
-        <h2 class="slide-title">REST Vs GraphQL</h2>
-        <ul>
-          <li>No more over fetching extra data.</li>
-          <img src="assets/img/graphql-request.png" alt="Graphql Request" />
-        </ul>
-      </section>
-
-      <section>
-        <h2 class="slide-title">REST Vs GraphQL</h2>
-        <ul>
-          <li>No more under fetching data.</li>
-          <img src="assets/img/graphql-request.png" alt="Graphql Request" />
-
-        </ul>
-      </section>
-
-      <section>
-        <h2 class="slide-title">REST Vs GraphQL</h2>
-        <ul>
-          <li>API changes and evolution</li>
-        </ul>
-        <pre class="fragment fade-in">
-						<code data-trim data-noescape>
-              type User {
-                name: String @deprecated(reason: "Use `fullName`")
-                fullName: String
-                age: Int
-                posts: [Post]
-                followers(last: Int):[Follower]
-              }
-						</code>
-					</pre>
-        <p class="fragment fade-in">
-          A directive can be attached to a field or fragment inclusion, and can affect execution of the query in any way
-          the server desires. <a target="_blank" href="https://graphql.org/learn/queries/#directives">more...</a>
-        </p>
-      </section>
-
-      <section>
-        <h2 class="slide-title">REST Vs GraphQL</h2>
-        <ul>
-          <li>Single endpoint</li>
-          <img class="fragment fade-in" src="assets/img/graphql-single-endpoint.jpeg" style="height: 55vh"
-            alt="Graphql single endpoint" />
-        </ul>
-      </section>
-      <section>
-        <h2 class="slide-title">REST Vs GraphQL</h2>
-        <ul>
-          <li>Insightful Analytics: low-level performance monitoring and usage of each field
-          </li>
-          <img class="fragment fade-in" src="assets/img/graphql-analytics.svg" alt="Graphql Analytics" />
-        </ul>
-      </section>
-      <section>
-        <h2 class="slide-title">REST Vs GraphQL</h2>
-        <ul>
-          <li>Auto documentation</li>
-          <img class="fragment fade-in" src="assets/img/graphql-doc.png" alt="Graphql documentation" />
-        </ul>
-      </section>
       <section>
         <h2 class="slide-title">Who’s using GraphQL</h2>
         <div class="company-logo-list">
@@ -198,6 +135,62 @@
           <a target="_blank" href="https://graphql.org/users/"><strong>click here</strong></a>
         </p>
       </section>
+      <section>
+        <h2 class="slide-title">REST Vs GraphQL</h2>
+        <section>
+          <ul>
+            <li>No more over fetching extra data.</li>
+            <img src="assets/img/graphql-request.png" alt="Graphql Request" />
+          </ul>
+        </section>
+        <section>
+          <ul>
+            <li>No more under fetching data.</li>
+            <img src="assets/img/graphql-request.png" alt="Graphql Request" />
+          </ul>
+        </section>
+        <section>
+          <ul>
+            <li>API changes and evolution</li>
+          </ul>
+          <pre>
+              <code data-trim data-noescape>
+                type User {
+                  name: String @deprecated(reason: "Use `fullName`")
+                  fullName: String
+                  age: Int
+                  posts: [Post]
+                  followers(last: Int):[Follower]
+                }
+              </code>
+            </pre>
+          <p class="fragment fade-in">
+            A directive can be attached to a field or fragment inclusion, and can affect execution of the query in any way
+            the server desires. <a target="_blank" href="https://graphql.org/learn/queries/#directives">more...</a>
+          </p>
+        </section>
+        <section>
+          <ul>
+            <li>Single endpoint</li>
+            <img src="assets/img/graphql-single-endpoint.jpeg" style="height: 55vh"
+              alt="Graphql single endpoint" />
+          </ul>
+        </section>
+        <section>
+          <ul>
+            <li>Insightful Analytics: low-level performance monitoring and usage of each field
+            </li>
+            <img src="assets/img/graphql-analytics.svg" alt="Graphql Analytics" />
+          </ul>
+        </section>
+        <section>
+          <ul>
+            <li>Documentation comes with no extra cost</li>
+            <img src="assets/img/graphql-doc.png" alt="Graphql documentation" />
+          </ul>
+        </section>
+      </section>
+    
       <section style="height: 100%;">
         <h2 class="slide-title">Coding on blogging app</h2>
         <div class="slide-center">
