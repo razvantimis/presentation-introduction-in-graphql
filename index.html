@@ -19,7 +19,8 @@
 <body>
   <div class="reveal">
     <div class="slides">
-      <section data-background-image="assets/tech-village.png" data-background-size="100% auto" data-background-position="top">
+      <section data-background-image="assets/tech-village.png" data-background-size="100% auto"
+        data-background-position="top">
         <h2 class="slide-title" style="font-size: 3rem; margin-top: 40%;">
           The Battle: REST vs <strong>GraphQL</strong>
         </h2>
@@ -29,7 +30,6 @@
       <section>
         <h2 class="slide-title">About the presentation</h2>
         <ul style="width: 90%">
-          <li>What is REST?</li>
           <li>What is GraphQL?</li>
           <li>A blogging app: REST Vs GraphQL</li>
           <li>Who’s using GraphQL?</li>
@@ -37,85 +37,67 @@
         </ul>
       </section>
       <section>
-        <h2 class="slide-title">What is REST</h2>
-        <ul>
-          <li class="fragment fade-in">
-            <b>RE</b>presentational <b>S</b>tate <b>T</b>ransfer is a software architectural style
-          </li>
-          <li class="fragment fade-in">A REST API consists of an assembly of interlinked resources</li>
-          <li class="fragment fade-in">The clients and servers exchange information by using a standardized interface
-            and http protocol.</li>
-          <li class="fragment fade-in">
-            Every interaction with the server must be stateless
-          </li>
-        </ul>
-      </section>
-
-      <section>
-        <h2 class="slide-title">What is GraphQL</h2>
-        <ul>
-          <li class="fragment fade-in">
-            A query language and server-side runtime for your API
-          </li>
-          <li class="fragment fade-in">GraphQL is designed to make APIs fast, flexible, and developer-friendly</li>
-          <li class="fragment fade-in">Developed by Facebook in 2012</li>
-
-        </ul>
-      </section>
-      <section>
-        <h2 class="slide-title">A blogging app: REST vs GraphQL</h2>
         <section>
+          <h2 class="slide-title">What is GraphQL</h2>
           <ul>
             <li>
-              A blogging application that need to display for a specific user:
-              <ul>
-                <li class="fragment fade-in">full name of the user</li>
-                <li class="fragment fade-in">the titles of the posts of that user</li>
-                <li class="fragment fade-in">the names of the last 3 followers of that user</li>
-              </ul>
+              A query language and server-side runtime for your API
             </li>
-            <li class="fragment fade-in">Let see the differente between REST and GraphQL </li>
-
+            <li class="fragment fade-in">
+              Alternative to REST
+            </li>
+            <li class="fragment fade-in">
+              GraphQL as a API Gateway ( graphql federation )
+            </li>
           </ul>
+          <img style="margin-top: 40px;" src="assets/img/graphql-exemple-1.jpg" alt="Graphql diagram" />
+        </section>
+      </section>
+      <section>
+        <section>
+          <h2 class="slide-title">A blogging app: REST vs GraphQL</h2>
+          <ul>
+            <li>
+              A blogging application that need to display for a specific user: full name, posts, followers.
+            </li>
+          </ul>
+          <img style="height: 400px" src="assets/img/blog-app.png" alt="Blog App" />
         </section>
         <section>
-          <img style="height: 500px" src="assets/img/blog-app.png" alt="Blog App" />
+          <h2 class="slide-title">A blogging app: <span style="color: red;">REST</span> vs GraphQL</h2>
+          <img src="assets/img/rest-api.png" alt="REST Blogging request 1" style="margin:0" />
+          <img src="assets/img/blogging-request-rest-2.png" alt="REST Blogging request 2" style="margin:0;" />
         </section>
-      </section>
-      <section>
-        <h2 class="slide-title">A blogging app: <span style="color: red;">REST</span> vs GraphQL</h2>
-        <img src="assets/img/rest-api.png" alt="REST Api Diagram" />
-        <p>For each endpoint, the client app will do a REST request</p>
-      </section>
-      <section>
-        <h2 class="slide-title">A blogging app: REST vs <span style="color: red;">GraphQL</span></h2>
-        <img src="assets/img/graphql-request.png" alt="Graphql Request" />
-      </section>
-      <section>
-        <h2 class="slide-title">A blogging app: REST vs <span style="color: red;">GraphQL</span></h2>
-        <p>Let see how the GraphQL schema look</p>
-        <pre class="fragment fade-in">
-          <code data-trim data-noescape>
-            type Query {
-              User(id: String): User
-            }
-            type User {
-              name: String
-              age: Int
-              posts: [Post]
-              followers(last: Int):[Follower]
-            }
-            type Post {
-              title: String
-              content: String
-            }
-            type Follower {
-              name: String
-              age: Int
-            }
-           
-          </code>
-        </pre>
+        <section>
+          <h2 class="slide-title">A blogging app: REST vs <span style="color: red;">GraphQL</span></h2>
+          <img src="assets/img/graphql-request.png" alt="Graphql Request" />
+        </section>
+        <section>
+          <h2 class="slide-title">A blogging app: REST vs <span style="color: red;">GraphQL</span></h2>
+          <p>Let see how the GraphQL schema look</p>
+          <pre class="fragment fade-in">
+            <code data-trim data-noescape>
+              type Query {
+                User(id: String): User
+              }
+              type User {
+                name: String
+                age: Int
+                posts: [Post]
+                followers(last: Int):[Follower]
+              }
+              type Post {
+                title: String
+                content: String
+              }
+              type Follower {
+                name: String
+                age: Int
+              }
+             
+            </code>
+          </pre>
+        </section>
       </section>
 
       <section>
@@ -170,16 +152,14 @@
         <ul>
           <li>Insightful Analytics: low-level performance monitoring and usage of each field
           </li>
-          <img class="fragment fade-in" src="assets/img/graphql-analytics.svg"
-            alt="Graphql Analytics" />
+          <img class="fragment fade-in" src="assets/img/graphql-analytics.svg" alt="Graphql Analytics" />
         </ul>
       </section>
       <section>
         <h2 class="slide-title">REST Vs GraphQL</h2>
         <ul>
           <li>Auto documentation</li>
-          <img class="fragment fade-in" src="assets/img/graphql-doc.png"
-            alt="Graphql documentation" />
+          <img class="fragment fade-in" src="assets/img/graphql-doc.png" alt="Graphql documentation" />
         </ul>
       </section>
       <section>
