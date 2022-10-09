@@ -43,11 +43,14 @@
             <li>
               A query language and server-side runtime for your API
             </li>
-            <li class="fragment fade-in">
+            <li>
               Alternative to REST
             </li>
           </ul>
           <img style="margin-top: 40px;" src="assets/img/graphql-exemple-1.jpg" alt="Graphql diagram" />
+        </section>
+        <section>
+          <img src="assets/img/graphql-mutation-query.svg" />
         </section>
         <section>
           <div style="display: flex; gap: 40px;">
@@ -56,7 +59,10 @@
           </div>
         </section>
         <section>
-          <img src="assets/img/graphql-mutation-query.svg" />
+          <div style="display: flex; gap: 40px; ">
+            <img height="180px" src="assets/img/graphql-mutation-request.png" />
+            <img src="assets/img/graphql-mutation-response.png" />
+          </div>
         </section>
       </section>
       <section>
@@ -100,7 +106,9 @@
                 name: String
                 age: Int
               }
-             
+              type Mutation {
+                addUser(name: String, age: Int): User
+              }
             </code>
           </pre>
         </section>

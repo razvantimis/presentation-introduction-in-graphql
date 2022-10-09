@@ -95,7 +95,9 @@ const resolvers = {
   },
   Mutation: {
     addUser: (parent: any, { name, age }: any, context: any, info: any) => {
-      // to implement
+      const user = {name, age, id: `${mockUsers.length++}`};
+      mockUsers.push(user)
+      return user
     },
   },
   User: {
