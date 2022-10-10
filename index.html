@@ -32,7 +32,8 @@
         <ul style="width: 90%">
           <li>What is GraphQL?</li>
           <li>A blogging app: REST Vs GraphQL</li>
-          <li>Who’s using GraphQL?</li>
+          <li>REST Vs GraphQL</li>
+          <li>Who’s using GraphQL? Use cases</li>
           <li>Coding on blogging app</li>
         </ul>
       </section>
@@ -87,7 +88,7 @@
         <section>
           <h2 class="slide-title">A blogging app: REST vs <span style="color: red;">GraphQL</span></h2>
           <p>Let see how the GraphQL schema look</p>
-          <pre class="fragment fade-in">
+          <pre>
             <code data-trim data-noescape>
               type Query {
                 User(id: String): User
@@ -113,42 +114,7 @@
           </pre>
         </section>
       </section>
-      <section>
-        <h2 class="slide-title">Who’s using GraphQL</h2>
-        <div class="company-logo-list">
-          <a target="_blank"
-            href="https://netflixtechblog.com/how-netflix-scales-its-api-with-graphql-federation-part-1-ae3557c187e2">
-            <img src="assets/logos/netflix.svg" alt="Netflix" />
-          </a>
-          <a target="_blank"
-            href="https://medium.com/airbnb-engineering/how-airbnb-is-moving-10x-faster-at-scale-with-graphql-and-apollo-aa4ec92d69e2">
-            <img src="assets/logos/airbnb-adopter.svg" alt="Airbnb" />
-          </a>
-          <a target="_blank" href="https://developer.atlassian.com/platform/atlassian-graphql-api/graphql/">
-            <img src="assets/logos/atlassian-adopter.svg" alt="Atlassian" />
-          </a>
-          <a target="_blank" href="https://medium.com/paypal-tech/graphql-at-paypal-an-adoption-story-b7e01175f2b7">
-            <img src="assets/logos/pay-pal-adopter.svg" alt="PayPal" />
-          </a>
-          <a target="_blank" href="https://medium.com/paypal-tech/graphql-at-paypal-an-adoption-story-b7e01175f2b7">
-            <img src="assets/logos/shopify-adopter.svg" alt="Shopify" />
-          </a>
-          <a target="_blank" href="https://www.youtube.com/watch?v=gpd6JtnWs2E">
-            <img src="assets/logos/the-new-york-times-adopter.svg" alt="The New York times" />
-          </a>
-          <a target="_blank"
-            href="https://blog.twitter.com/engineering/en_us/topics/infrastructure/2020/rebuild_twitter_public_api_2020">
-            <img height="140px" src="assets/logos/twitter.svg" alt="Twitter" />
-          </a>
-          <a target="_blank" href="https://docs.github.com/en/graphql">
-            <img style="width: 130px;" src="assets/logos/github.png" alt="Github" />
-          </a>
-        </div>
-        <p>
-          For more...
-          <a target="_blank" href="https://graphql.org/users/"><strong>click here</strong></a>
-        </p>
-      </section>
+
       <section>
         <h2 class="slide-title">REST Vs GraphQL</h2>
         <section>
@@ -204,7 +170,69 @@
           </ul>
         </section>
       </section>
-
+      <section>
+        <section>
+          <h2 class="slide-title">Who’s using GraphQL</h2>
+          <div class="company-logo-list">
+            <a target="_blank"
+              href="https://netflixtechblog.com/how-netflix-scales-its-api-with-graphql-federation-part-1-ae3557c187e2">
+              <img src="assets/logos/netflix.svg" alt="Netflix" />
+            </a>
+            <a target="_blank"
+              href="https://medium.com/airbnb-engineering/how-airbnb-is-moving-10x-faster-at-scale-with-graphql-and-apollo-aa4ec92d69e2">
+              <img src="assets/logos/airbnb-adopter.svg" alt="Airbnb" />
+            </a>
+            <a target="_blank" href="https://developer.atlassian.com/platform/atlassian-graphql-api/graphql/">
+              <img src="assets/logos/atlassian-adopter.svg" alt="Atlassian" />
+            </a>
+            <a target="_blank" href="https://medium.com/paypal-tech/graphql-at-paypal-an-adoption-story-b7e01175f2b7">
+              <img src="assets/logos/pay-pal-adopter.svg" alt="PayPal" />
+            </a>
+            <a target="_blank" href="https://medium.com/paypal-tech/graphql-at-paypal-an-adoption-story-b7e01175f2b7">
+              <img src="assets/logos/shopify-adopter.svg" alt="Shopify" />
+            </a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=gpd6JtnWs2E">
+              <img src="assets/logos/the-new-york-times-adopter.svg" alt="The New York times" />
+            </a>
+            <a target="_blank"
+              href="https://blog.twitter.com/engineering/en_us/topics/infrastructure/2020/rebuild_twitter_public_api_2020">
+              <img height="140px" src="assets/logos/twitter.svg" alt="Twitter" />
+            </a>
+            <a target="_blank" href="https://docs.github.com/en/graphql">
+              <img style="width: 130px;" src="assets/logos/github.png" alt="Github" />
+            </a>
+          </div>
+          <p>
+            For more...
+            <a target="_blank" href="https://graphql.org/users/"><strong>click here</strong></a>
+          </p>
+        </section>
+        <section>
+          <h2 class="slide-title">Use case #1</h2>
+          <img style="margin: 0" src="assets/img/netflix-studio-content.png" alt="Netflix studio" />
+            <p>Studio Engineering is building hundreds of applications and tools that power these workflows.</p>
+        </section>
+        <section>
+          <h2 class="slide-title">Use case #1 problem</h2>
+          <img style="margin: 0" src="assets/img/netflix-direct-request.png" alt="Netflix studio" />
+            <p>One of the pains in the studio space was the growing complexity of the data and its relationships</p>
+        </section>
+        <section>
+          <h2 class="slide-title">Use case #1 solution</h2>
+          <p>Netflix offers a unified API aggregation layer at the edge</p>
+          <img style="margin: 0" src="assets/img/netflix-federation-gateway.png" alt="Netflix federation" />
+        </section>
+        <section>
+          <h2 class="slide-title">Use case #2 </h2>
+          <p>Dynamic page is constructed based on a query that will return an array of some set of possible “sections”</p>
+          <iframe width="750" height="450" src="https://www.youtube.com/embed/JsvElHDuqoA?clip=Ugkx_8ggNB-h9TbH1xOjvGl33NlhOG-NHGBW&amp;clipt=EIbBKBiO6Cg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+        <section>
+          <h2 class="slide-title">Use case #2 </h2>
+          <p>GraphQL Unions for Backend-Driven UI</p>
+          <img style="margin: 0" src="assets/img/airbnb-schema.png" alt="Airbnb Schema" />
+        </section>
+      </section>
       <section style="height: 100%;">
         <h2 class="slide-title">Coding on blogging app</h2>
         <div class="slide-center">
